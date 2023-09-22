@@ -56,7 +56,7 @@ class EnvReader
     /**
      * @param string|null $name
      * @param null $default
-     * @param string $envName 指 定配置名称默认没有名称就是.env有名称就是 .env.名称
+     * @param string $envName 指定配置名称默认没有名称就是.env有名称就是 .env.名称
      * @return mixed
      */
     public static function get(string $name = null, $default = null, string $envName = '')
