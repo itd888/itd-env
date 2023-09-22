@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------
 declare (strict_types = 1);
 
-namespace sky_com;
+namespace itd;
 
 use ArrayAccess;
 
@@ -18,7 +18,7 @@ use ArrayAccess;
  * Env管理类
  * @package think
  */
-class SkEnv implements ArrayAccess
+class Env implements ArrayAccess
 {
     /**
      * 环境变量数据
@@ -50,7 +50,9 @@ class SkEnv implements ArrayAccess
      */
     public function load(string $file): void
     {
+        echo "load file:$file<br>";
         $env = parse_ini_file($file, true, INI_SCANNER_RAW) ?: [];
+        var_dump($env);
         $this->set($env);
     }
 
@@ -123,6 +125,7 @@ class SkEnv implements ArrayAccess
                     $this->data[$key] = $val;
                 }
             }
+            print_R($this->data);
         } else {
             $name = strtoupper(str_replace('.', '_', $env));
 

@@ -11,12 +11,15 @@
     ],
     "autoload": {
         "psr-4": {
-            "think\\": "src"
-        }
+            "itd\\": "src"
+        },
+        "files": [
+            "src/helper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "think\\tests\\": "tests/"
+            "itd\\tests\\": "tests/"
         }
     },
     "require": {
