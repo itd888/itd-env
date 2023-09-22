@@ -50,9 +50,7 @@ class Env implements ArrayAccess
      */
     public function load(string $file): void
     {
-        echo "load file:$file<br>";
         $env = parse_ini_file($file, true, INI_SCANNER_RAW) ?: [];
-        var_dump($env);
         $this->set($env);
     }
 
@@ -125,7 +123,6 @@ class Env implements ArrayAccess
                     $this->data[$key] = $val;
                 }
             }
-            print_R($this->data);
         } else {
             $name = strtoupper(str_replace('.', '_', $env));
 

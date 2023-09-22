@@ -31,6 +31,8 @@ class EnvReader
         $envFile = self::getEnvFile($envName);
         if (is_file($envFile)) {
             self::$env->load($envFile);
+        }else{
+            echo "env file not found:".$envFile."<br>";
         }
         self::$envNames[] = $envName;
     }
@@ -50,7 +52,7 @@ class EnvReader
      */
     private static function getDefaultRootPath(): string
     {
-        return dirname(realpath(dirname(__DIR__)) . DIRECTORY_SEPARATOR, 2) . DIRECTORY_SEPARATOR;
+        return dirname(realpath(dirname(__DIR__)) . DIRECTORY_SEPARATOR, 3) . DIRECTORY_SEPARATOR;
     }
 
     /**
